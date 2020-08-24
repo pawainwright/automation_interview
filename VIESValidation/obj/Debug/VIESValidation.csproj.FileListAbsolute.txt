@@ -1,1 +1,6 @@
 C:\Users\piers\Git\automation_interview\VIESValidation\obj\Debug\VIESValidation.csprojAssemblyReference.cache
+C:\Users\piers\Git\automation_interview\VIESValidation\bin\Debug\VIESValidation.dll.config
+C:\Users\piers\Git\automation_interview\VIESValidation\bin\Debug\VIESValidation.dll
+C:\Users\piers\Git\automation_interview\VIESValidation\bin\Debug\VIESValidation.pdb
+C:\Users\piers\Git\automation_interview\VIESValidation\obj\Debug\VIESValidation.dll
+C:\Users\piers\Git\automation_interview\VIESValidation\obj\Debug\VIESValidation.pdb

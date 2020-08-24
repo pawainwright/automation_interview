@@ -40,7 +40,7 @@ namespace VIESValidation
 
         private bool compareNames(string nameProvided, string nameFound)
         {
-            return false;
+            return nameFound.Contains(nameProvided);
         }
 
         protected override void Execute(CodeActivityContext context)
@@ -57,7 +57,7 @@ namespace VIESValidation
             //Post to VIES
             checkVatService check = new checkVatService();
             check.checkVat(ref countryCode, ref VATNumberToCheck, out isValid, out respCompanyName, out respAddress);
-            
+
             //Check response and return results:
 
             //If VAT number is invalid
