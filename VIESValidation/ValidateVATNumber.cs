@@ -45,7 +45,7 @@ namespace VIESValidation
             check.checkVat(ref countryCode, ref VATNumberToCheck, out isValid, out respCompanyName, out respAddress);
 
             //Return result
-            ValidationResult.Set(context, false);
+            ValidationResult.Set(context, isValid);
             CompanyNameResponse.Set(context, respCompanyName);
             return;
         }
