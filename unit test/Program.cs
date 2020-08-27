@@ -1,25 +1,10 @@
 ﻿using System;
-using System.Activities;
-using System.ComponentModel;
+using System.Diagnostics;
 
-namespace LevenshteinDistanceCS
+namespace unit_test
 {
-    public class LevenshteinDistance : CodeActivity
+    class Program
     {
-        [Category("Input")]
-        [RequiredArgument]
-        public InArgument<string> FirstString { get; set; }
-
-        [Category("Input")]
-        [RequiredArgument]
-        public InArgument<string> SecondString { get; set; }
-
-        [Category("Output")]
-        public OutArgument<double> DistanceScore { get; set; }
-
-        [Category("Output")]
-        public OutArgument<bool> NameMatch { get; set; }
-
         private static int Compute(string s, string t)
         {
             int n = s.Length;
@@ -73,25 +58,49 @@ namespace LevenshteinDistanceCS
             return false;
         }
 
-        protected override void Execute(CodeActivityContext context)
+
+        static void Main(string[] args)
         {
+
+            //Test Fixture
+            string FirstString = "RANDSTAD PUBLIC SERVICES LTD";
+            string SecondString = "RANDSTAD PUBLIC SERVICES LIMITED";
+            double DistanceScore = 0;
+            bool NameMatch = false;
+
             //If either name is empty, return as no match
-            if (FirstString.Get(context).Length < 1 || SecondString.Get(context).Length < 1)
+            if (FirstString.Length < 1 || SecondString.Length < 1)
             {
-                NameMatch.Set(context, false);
-                DistanceScore.Set(context, 0);
+                NameMatch = false;
+                DistanceScore = 0;
                 return;
             }
-            
-            //Check whether names match (including exact coefficients)
-            NameMatch.Set(context, MatchNames(FirstString.Get(context), SecondString.Get(context)));
-            //Get Levenshtein distance in number of edits required
-            int distance = Compute(FirstString.Get(context).ToUpper(), SecondString.Get(context).ToUpper());
-            //Convert steps to percentage score
-            double longest = Math.Max(FirstString.Get(context).Length, SecondString.Get(context).Length);
-            double pct = (longest - distance) / longest * 100;
-            DistanceScore.Set(context, pct);
-        }
 
+            //Check whether names match (including exact coefficients)
+            NameMatch = MatchNames(FirstString, SecondString);
+            //Get Levenshtein distance in number of edits required
+            int distance = Compute(FirstString, SecondString);
+            //Convert steps to percentage score
+            double longest = Math.Max(FirstString.Length, SecondString.Length);
+            double pct = (longest - distance) / longest * 100;
+            DistanceScore = pct;
+
+            Debug.WriteLine("First company name: " + FirstString);
+            Debug.WriteLine("Second company name: " + SecondString);
+            Debug.WriteLine("Names Match: " + NameMatch.ToString());
+            Debug.WriteLine("Longest string: " + longest.ToString());
+            Debug.WriteLine("Lev edit distance: " + distance.ToString());
+            Debug.WriteLine("Percentage similarity: " + DistanceScore.ToString());
+        }
     }
 }
+
+
+
+
+
+        
+        
+
+    
+

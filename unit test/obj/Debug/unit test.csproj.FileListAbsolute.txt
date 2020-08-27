@@ -1,0 +1,6 @@
+C:\Users\piers\Git\automation_interview\unit test\bin\Debug\unit test.exe.config
+C:\Users\piers\Git\automation_interview\unit test\bin\Debug\unit test.exe
+C:\Users\piers\Git\automation_interview\unit test\bin\Debug\unit test.pdb
+C:\Users\piers\Git\automation_interview\unit test\obj\Debug\unit test.csprojAssemblyReference.cache
+C:\Users\piers\Git\automation_interview\unit test\obj\Debug\unit test.exe
+C:\Users\piers\Git\automation_interview\unit test\obj\Debug\unit test.pdb
