@@ -1,0 +1,14 @@
+Before running automation:
+
+	Read Design Doc
+
+	Ensure required packages are installed
+
+	Create folder for input and output:
+
+	C:\Users\%yourusername%\automation\input
+	C:\Users\%yourusername%\automation\output
+
+	Place test data file in input and run, spreadsheet will be moved to output
+
+	Optionally, configure and uncomment email steps to see notification in action
